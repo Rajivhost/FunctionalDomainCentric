@@ -8,4 +8,14 @@
     <Compile Include="Library.fs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Trader.Application\Trader.Application.fsproj" />
+    <ProjectReference Include="..\Trader.Infrastructure\Trader.Infrastructure.fsproj" />
+    <ProjectReference Include="..\Trader.Persistance\Trader.Persistance.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.2.3" />
+  </ItemGroup>
+
 </Project>
