@@ -1,4 +1,4 @@
-namespace Hse.DependencyResolution
+namespace Hse.DependencyInjection
 
 open Microsoft.Extensions.DependencyInjection
 open Hse.Application.Services

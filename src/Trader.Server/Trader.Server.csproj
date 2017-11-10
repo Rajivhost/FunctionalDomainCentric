@@ -10,6 +10,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Rebus.Serilog" Version="4.0.0" />
+    <PackageReference Include="Rebus.ServiceProvider" Version="4.0.1" />
+    <PackageReference Include="Rebus.Wire" Version="4.0.0" />
   </ItemGroup>
 
   <ItemGroup>
