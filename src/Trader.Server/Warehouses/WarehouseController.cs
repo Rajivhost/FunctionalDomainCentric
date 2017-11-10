@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Hse.Application.Contracts;
+using Hse.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Trader.Server.Controllers
+namespace Trader.Api.Controllers
 {
-    [Route("api/[controller]")]
-    public class ValuesController : Controller
+    [Route("api/warehouses")]
+    public class WarehouseController : Controller
     {
         // GET api/values
         [HttpGet]
@@ -23,9 +22,8 @@ namespace Trader.Server.Controllers
             return "value";
         }
 
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]CreateWarehouseModel model, [FromServices] IWarehouseService service)
         {
         }
 

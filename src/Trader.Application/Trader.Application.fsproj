@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Library.fs" />
+    <Compile Include="Contracts.fs" />
+    <Compile Include="Services.fs" />
   </ItemGroup>
 
   <ItemGroup>
