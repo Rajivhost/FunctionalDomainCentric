@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Rebus" Version="4.1.0" />
+    <PackageReference Include="TaskBuilder.fs" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

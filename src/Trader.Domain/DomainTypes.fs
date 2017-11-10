@@ -2,7 +2,7 @@ namespace Hse.Domain
 open System
 
 type WarehouseId = private WarehouseId of Guid
-                    with 
+                    with
                         static member Create id = id |> WarehouseId
                         static member GetValue (WarehouseId id) = id
                         static member Empty = Guid.Empty |> WarehouseId
@@ -17,7 +17,7 @@ type WarehouseData = {Id: WarehouseId; Name: WarehouseName}
                        with
                         static member Empty = {Id = WarehouseId.Empty; Name = WarehouseName.Empty}
 
-type WarehouseState = 
+type WarehouseState =
     | Initial
     | Created of WarehouseData
 

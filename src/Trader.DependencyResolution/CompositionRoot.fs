@@ -6,5 +6,6 @@ open Hse.Infrastructure.Services
 
 module CompositionRoot =
     let Compose (services: IServiceCollection) =
-        services.AddScoped<IWarehouseService, WarehouseService>()
+        //services.AddScoped<ICommandBus, CommandBus>()
+        services
 

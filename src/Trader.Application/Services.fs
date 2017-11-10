@@ -1,7 +1,12 @@
 ﻿namespace Hse.Application.Services
 
-open Hse.Application.Contracts
+open System.Threading.Tasks
+open Hse.Domain
 
-type IWarehouseService =
-        abstract Create: model: CreateWarehouseModel -> Result<unit, string>;
+type ICommandBus =
+        abstract SendAsync: command: obj -> Task<Result<unit, string>>
+
+type IWarehouseRepository =
+        abstract SaveAsync: event: WarehouseEvent -> Task<Result<unit, string>>;
+        abstract GetByIdAsync: id: WarehouseId -> Task<Result<WarehouseState, string>>;
 

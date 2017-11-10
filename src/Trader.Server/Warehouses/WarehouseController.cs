@@ -23,7 +23,7 @@ namespace Trader.Api.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody]CreateWarehouseModel model, [FromServices] IWarehouseService service)
+        public void Post([FromBody] CreateWarehouseModel model/*, [FromServices] ICommandBus commandBus*/)
         {
         }
 
