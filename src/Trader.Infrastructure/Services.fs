@@ -4,7 +4,9 @@ open Hse.Application.Services
 open Rebus.Bus
 open System
 open System.Threading.Tasks
-open FSharp.Control.Tasks
+//open FSharp.Control.Tasks
+open Rebus.Handlers
+open Hse.Application.Contracts
 
 //type CommandBus(bus: IBus) =
 //        interface ICommandBus with
@@ -14,3 +16,11 @@ open FSharp.Control.Tasks
 //                                                    with
 //                                                        | :? Exception as ex -> Error ex.Message
 //                                                }
+
+type WarehouseCommandHandler() =
+    interface IHandleMessages<WarehouseCommand> with
+        member __.Handle (command: WarehouseCommand) = 
+            match command with
+            | Create (id, name) ->
+                Task.CompletedTask
+            | _ -> Task.CompletedTask
