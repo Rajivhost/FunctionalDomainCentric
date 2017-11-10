@@ -1,8 +1,12 @@
-﻿using Hse.DependencyInjection;
+﻿using FluentValidation.AspNetCore;
+using Hse.Configuration;
+using Hse.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Rebus.Config;
+using Rebus.ServiceProvider;
 
 namespace Trader.Server
 {
@@ -20,7 +24,11 @@ namespace Trader.Server
         {
             CompositionRoot.Compose(services);
 
-            services.AddMvc();
+            services
+                .AddMvc()
+                .AddFluentValidation(configuration => configuration.RegisterValidatorsFromAssemblyContaining<Startup>());
+
+            services.AddRebus(RebusConfig.Configure);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,6 +38,8 @@ namespace Trader.Server
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseRebus();
 
             app.UseMvc();
         }

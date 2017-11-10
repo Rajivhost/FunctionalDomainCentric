@@ -9,6 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Insight.Database" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Trader.Application\Trader.Application.fsproj" />
     <ProjectReference Include="..\Trader.Domain\Trader.Domain.fsproj" />
   </ItemGroup>

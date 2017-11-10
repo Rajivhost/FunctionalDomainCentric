@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using Hse.Application.Contracts;
 using Hse.Application.Services;
+using Hse.Validation;
 using Microsoft.AspNetCore.Mvc;
+using Rebus.Bus;
 
 namespace Trader.Api.Controllers
 {
-    [Route("api/warehouses")]
+    [Route("api/warehouses"), ValidateModel]
     public class WarehouseController : Controller
     {
         // GET api/values
@@ -23,8 +25,9 @@ namespace Trader.Api.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody] CreateWarehouseModel model/*, [FromServices] ICommandBus commandBus*/)
+        public void Post([FromBody] CreateWarehouseModel model, [FromServices] IBus bus)
         {
+            //WarehouseCommand.ToCreateCommand(model)
         }
 
         // PUT api/values/5
