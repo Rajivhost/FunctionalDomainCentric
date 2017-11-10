@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Hse.Application.Contracts;
 using Hse.Application.Services;
 using Hse.Validation;
@@ -25,9 +26,13 @@ namespace Trader.Api.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody] CreateWarehouseModel model, [FromServices] IBus bus)
+        public async Task<IActionResult> Post([FromBody] CreateWarehouseModel model, [FromServices] IBus bus)
         {
-            //WarehouseCommand.ToCreateCommand(model)
+            var command = WarehouseCommand.ToCreateCommand(model);
+
+            await bus.Send(command).ConfigureAwait(false);
+
+            return Ok();
         }
 
         // PUT api/values/5
