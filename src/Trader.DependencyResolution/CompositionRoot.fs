@@ -8,4 +8,3 @@ open Rebus.ServiceProvider
 module CompositionRoot =
     let Compose (services: IServiceCollection) =
         services.AutoRegisterHandlersFromAssemblyOf<WarehouseCommandHandler>();
-

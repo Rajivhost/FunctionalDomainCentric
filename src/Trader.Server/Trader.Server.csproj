@@ -15,7 +15,7 @@
     <PackageReference Include="Rebus.Serilog" Version="4.0.0" />
     <PackageReference Include="Rebus.ServiceProvider" Version="4.0.1" />
     <PackageReference Include="Rebus.Wire" Version="4.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="1.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>
