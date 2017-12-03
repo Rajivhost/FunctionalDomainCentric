@@ -1,6 +1,5 @@
 ﻿using FluentValidation.AspNetCore;
 using Hse.Configuration;
-using Hse.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
@@ -25,7 +24,7 @@ namespace Trader.Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            CompositionRoot.Compose(services);
+            services.AddApplicationServices();
 
             services.AddSwaggerGen(options => options.SwaggerDoc("v1", new Info
             {
