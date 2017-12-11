@@ -10,6 +10,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Chessie" Version="0.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Trader.Domain\Trader.Domain.fsproj" />
   </ItemGroup>
 
