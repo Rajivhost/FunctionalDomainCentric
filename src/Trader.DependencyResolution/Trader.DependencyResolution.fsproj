@@ -16,7 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Trader.Application\Trader.Application.fsproj" />
     <ProjectReference Include="..\Trader.Infrastructure\Trader.Infrastructure.fsproj" />
-    <ProjectReference Include="..\Trader.Persistance\Trader.Persistance.fsproj" />
+    <ProjectReference Include="..\Trader.Persistence\Trader.Persistence.fsproj" />
   </ItemGroup>
 
   <ItemGroup>
